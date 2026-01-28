@@ -91,7 +91,10 @@ pub use codex_git::GhostSnapshotConfig;
 /// files are *silently truncated* to this size so we do not take up too much of
 /// the context window.
 pub(crate) const PROJECT_DOC_MAX_BYTES: usize = 32 * 1024; // 32 KiB
-pub(crate) const DEFAULT_AGENT_MAX_THREADS: Option<usize> = Some(6);
+/// Default maximum number of concurrent agent threads that can be spawned.
+/// This limit supports efficient parallel orchestration while preventing resource exhaustion.
+/// Can be configured via `agents.max_threads` in config.toml.
+pub(crate) const DEFAULT_AGENT_MAX_THREADS: Option<usize> = Some(10);
 
 pub const CONFIG_TOML_FILE: &str = "config.toml";
 

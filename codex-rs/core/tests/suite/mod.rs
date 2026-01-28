@@ -45,6 +45,7 @@ mod model_overrides;
 mod model_tools;
 mod models_cache_ttl;
 mod models_etag_responses;
+mod multi_agent_orchestration;
 mod otel;
 mod pending_input;
 mod permissions_messages;
